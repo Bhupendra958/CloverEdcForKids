@@ -1,0 +1,93 @@
+<?php
+// locate `src/auth.php` by walking ancestors so this works under different docroots
+$root = __DIR__;
+while (!file_exists($root . '/src/auth.php')) {
+  $parent = dirname($root);
+  if ($parent === $root) break;
+  $root = $parent;
+}
+require_once $root . '/src/auth.php';
+require_login();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subject Videos | Clover Education</title>
+  <link href="/Clover/HtmlFiles/src/output.css" rel="stylesheet">
+</head>
+<body>
+    <a href="javascript:history.back()" class="fixed top-4 left-4 z-50 bg-white/90 text-gray-800 px-4 py-2 rounded-lg shadow hover:bg-white transition-all duration-300">&larr; Back</a>
+
+
+    
+
+  <!-- Header -->
+  <header class="bg-green-600 py-6 shadow-md">
+    <div class="flex items-center justify-center space-x-4">
+      <img src="/Clover/HtmlFiles/images/cloverlogo.png" alt="clover logo" class="w-14 h-14">
+      <img src="/Clover/HtmlFiles/images/clovername.png" alt="clover name" class="w-40">
+    </div>
+    <nav class="mt-4">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="/Clover/HtmlFiles/index.php" class="text-white font-medium hover:text-yellow-100 transition">Home</a></li>
+        <li><a href="/Clover/HtmlFiles/About.php" class="text-white font-medium hover:text-yellow-100 transition">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <section class="text-center py-10">
+    <h1 class="text-4xl font-extrabold text-indigo-700 drop-shadow-lg">&#x1F3A5; Subject Videos</h1>
+    <p class="mt-2 text-lg text-red-700 font-medium">Click on a subject to watch the video on YouTube!</p>
+  </section>
+
+  <!-- Video Cards -->
+  <main class="max-w-5xl mx-auto px-6 space-y-10 pb-16">
+
+    <!-- Math -->
+    <a href="https://youtu.be/hOHrqPI9bVk?si=7_DvAmMyvDMQlkJz" target="_blank" class="block bg-white rounded-xl shadow-lg p-6 border-l-8 border-yellow-400 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-yellow-600 mb-2">&#x1F3A5; Math</h2>
+      <p class="text-gray-600 mb-2">Learn numbers, shapes, and problem-solving!</p>
+      <p class="text-sm text-blue-600">Click to open in YouTube</p>
+    </a>
+
+    <!-- English -->
+    <a href="https://youtu.be/MCQoWGAmj7w?si=rkahzn42sH1Ze4h4" target="_blank" class="block bg-white rounded-xl shadow-lg p-6 border-l-8 border-blue-400 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">&#x1F3A5; English</h2>
+      <p class="text-gray-600 mb-2">Improve vocabulary, grammar, and speaking.</p>
+      <p class="text-sm text-blue-600">Click to open in YouTube</p>
+    </a>
+
+    <!-- Social Science -->
+    <a href="https://youtu.be/3SsK-cxlj_w?si=c7GGq8Q3NGcL5uMT" target="_blank" class="block bg-white rounded-xl shadow-lg p-6 border-l-8 border-red-400 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-red-600 mb-2">&#x1F3A5; Social Science</h2>
+      <p class="text-gray-600 mb-2">Explore people, places, and history.</p>
+      <p class="text-sm text-blue-600">Click to open in YouTube</p>
+    </a>
+
+    <!-- Science -->
+    <a href="https://youtu.be/lv6dC0coQeI?si=_dwOhUe_NEG9-530" target="_blank" class="block bg-white rounded-xl shadow-lg p-6 border-l-8 border-purple-400 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-purple-600 mb-2">&#x1F3A5; Science</h2>
+      <p class="text-gray-600 mb-2">Discover amazing facts about nature and experiments.</p>
+      <p class="text-sm text-blue-600">Click to open in YouTube</p>
+    </a>
+
+    <!-- Physical Education -->
+    <a href="https://youtu.be/3_oIssULEk0?si=d8rEt8PvO3y6UQkx" target="_blank" class="block bg-white rounded-xl shadow-lg p-6 border-l-8 border-green-400 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      <h2 class="text-2xl font-bold text-green-600 mb-2">&#x1F3A5; Physical Education</h2>
+      <p class="text-gray-600 mb-2">Stay active with fun exercises and sports!</p>
+      <p class="text-sm text-blue-600">Click to open in YouTube</p>
+    </a>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center mt-10 bg-green-600 text-white py-4">
+    &copy; 2025 Subject Videos | Clover Education
+  </footer>
+
+</body>
+</html>
+
